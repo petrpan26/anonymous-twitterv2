@@ -1,60 +1,58 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import StoryCard from '../../Components/StoryCard/StoryCard';
-
+import StoryModal from '../../Components/StoryModal/StoryModal';
 class StoryList extends Component {
-
-    constructor(props) {
+    constructor(props) { 
         super(props);
         this.state = {
-            stories: [
-                {
-                    created_at: '30/09/1999',
-                    tag: 'blacklifematter',
-                    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Maecenas sed enim ut sem viverra aliquet eget sit. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Tortor vitae purus faucibus ornare suspendisse. Netus et malesuada fames ac turpis egestas integer. Scelerisque in dictum non consectetur a erat. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Tristique senectus et netus et malesuada fames ac turpis. Ut pharetra sit amet aliquam id. Ultrices neque ornare aenean euismod elementum nisi quis. Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Massa sed elementum tempus egestas sed sed. Eleifend mi in nulla posuere.'
-                },
-                {
-                    created_at: '30/09/1999',
-                    tag: 'blacklifematter',
-                    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Maecenas sed enim ut sem viverra aliquet eget sit. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Tortor vitae purus faucibus ornare suspendisse. Netus et malesuada fames ac turpis egestas integer. Scelerisque in dictum non consectetur a erat. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Tristique senectus et netus et malesuada fames ac turpis. Ut pharetra sit amet aliquam id. Ultrices neque ornare aenean euismod elementum nisi quis. Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Massa sed elementum tempus egestas sed sed. Eleifend mi in nulla posuere.'
-                },
-                {
-                    created_at: '30/09/1999',
-                    tag: 'blacklifematter',
-                    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Maecenas sed enim ut sem viverra aliquet eget sit. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Tortor vitae purus faucibus ornare suspendisse. Netus et malesuada fames ac turpis egestas integer. Scelerisque in dictum non consectetur a erat. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Tristique senectus et netus et malesuada fames ac turpis. Ut pharetra sit amet aliquam id. Ultrices neque ornare aenean euismod elementum nisi quis. Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Massa sed elementum tempus egestas sed sed. Eleifend mi in nulla posuere.'
-                },
-                {
-                    created_at: '30/09/1999',
-                    tag: 'blacklifematter',
-                    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Maecenas sed enim ut sem viverra aliquet eget sit. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Tortor vitae purus faucibus ornare suspendisse. Netus et malesuada fames ac turpis egestas integer. Scelerisque in dictum non consectetur a erat. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Tristique senectus et netus et malesuada fames ac turpis. Ut pharetra sit amet aliquam id. Ultrices neque ornare aenean euismod elementum nisi quis. Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Massa sed elementum tempus egestas sed sed. Eleifend mi in nulla posuere.'
-                },
-                {
-                    created_at: '30/09/1999',
-                    tag: 'blacklifematter',
-                    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Maecenas sed enim ut sem viverra aliquet eget sit. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Tortor vitae purus faucibus ornare suspendisse. Netus et malesuada fames ac turpis egestas integer. Scelerisque in dictum non consectetur a erat. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Tristique senectus et netus et malesuada fames ac turpis. Ut pharetra sit amet aliquam id. Ultrices neque ornare aenean euismod elementum nisi quis. Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Massa sed elementum tempus egestas sed sed. Eleifend mi in nulla posuere.'
-                },
-                {
-                    created_at: '30/09/1999',
-                    tag: 'blacklifematter',
-                    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Maecenas sed enim ut sem viverra aliquet eget sit. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Tortor vitae purus faucibus ornare suspendisse. Netus et malesuada fames ac turpis egestas integer. Scelerisque in dictum non consectetur a erat. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Tristique senectus et netus et malesuada fames ac turpis. Ut pharetra sit amet aliquam id. Ultrices neque ornare aenean euismod elementum nisi quis. Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Massa sed elementum tempus egestas sed sed. Eleifend mi in nulla posuere.'
-                }
-            ]
+            stories: props.stories,
+            modalContentIndex: -1,
+            showModal: false
         }
+        this.expandStory = this.expandStory.bind(this)
+        this.collapseStory = this.collapseStory.bind(this)
+    }
+
+    componentDidMount(){
+        
+        this.setState({stories: this.props.stories})
+    }
+
+    expandStory = (index) => {
+        this.setState({ modalContentIndex: 0, showModal: true })
+    }
+
+    collapseStory = () => {
+        this.setState({ showModal: false })
     }
 
     render() {
         return <>
-        { this.state.stories.map(
-                (story, index) => {
-                    return <Row>
-                        <StoryCard
-                            story={story}
-                        />
-                    </Row>
+            {this.props.stories
+                ? this.props.stories.map(
+                    (story, index) => {
+                        return <Row>
+                            <StoryCard
+                                story={story}
+                                expandStory={() => { this.expandStory(index) }}
+                                collapseStory={this.collapseStory}
+                            />
+                        </Row>
 
-                }
-            )
-        }
+                    }
+                )
+                : null
+            }
+            {this.state.modalContentIndex !== -1
+                ? <StoryModal
+                    collapseStory={this.collapseStory}
+                    showModal={this.state.showModal}
+                    story={this.state.stories[this.state.modalContentIndex]}
+                ></StoryModal>
+                : null
+            }
+
         </>
     }
 }

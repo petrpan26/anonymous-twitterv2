@@ -3,10 +3,10 @@ import './StoryCard.css';
 import {Button} from 'react-bootstrap';
 
 const StoryCard = (props) => {
-    return <div className='story-card shadow'>
+    return <div className='story-card shadow' onClick={props.expandStory}>
         <div className='story-card-header'>
             <h3>#{props.story.tag}</h3>
-            <Button variant="info" className='like-button'>up</Button>
+            <div className='like-button' onClick={props.triggerLike}></div>
         </div>
         <hr></hr>
         <p className='story-card-content'>{props.story.content}</p>

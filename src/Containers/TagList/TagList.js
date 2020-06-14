@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './TagList.css';
-
+import TagListItem from '../../Components/TagListItem/TagListItem';
 class TagList extends Component {
     constructor(props) {
         super(props)
@@ -15,10 +15,7 @@ class TagList extends Component {
             {this.state.tags
                 ? <>{this.state.tags.map(
                         (tag, index) => {
-                            return <div className='tag-item'>
-                                    <p><b>#{tag.name}</b></p>
-                                    <p>{tag.num_post}</p>
-                                </div>
+                            return <TagListItem tag={tag}></TagListItem>
 
                         }
                     )
