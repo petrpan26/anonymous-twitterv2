@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 class HomePage extends Component{
 
-    constructor(props){
+        constructor(props){
         super(props)
         this.toNewStory = this.toNewStory.bind(this)
     }
