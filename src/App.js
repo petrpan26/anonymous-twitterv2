@@ -4,6 +4,7 @@ import './App.css';
 import {Route, Switch, Redirect } from 'react-router-dom';
 import HomePage from './Pages/HomePage/HomePage';
 import NewStoryPage from './Pages/NewStoryPage/NewStoryPage';
+import StoriesPage from './Pages/StoriesPage/StoriesPage';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Switch>
         <Route path='/home' component={HomePage}/>
         <Route path='/newstory' component={NewStoryPage}/>
+        <Route path='/stories' component={StoriesPage}/>
         <Route path='/'>
           <Redirect to='/home'/>
         </Route>

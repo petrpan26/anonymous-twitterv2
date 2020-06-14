@@ -1,0 +1,25 @@
+.story-card{
+    height: 300px;
+    border-radius: 20px;
+    margin: 15px;
+    padding: 30px;
+    overflow-y: hidden;
+    background: -webkit-linear-gradient(top,#000 70%, #fff);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.story-card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+.story-card-content{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+    text-indent: 40px;
+}
