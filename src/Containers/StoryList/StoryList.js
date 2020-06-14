@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import StoryCard from '../../Components/StoryCard/StoryCard';
 import StoryModal from '../../Components/StoryModal/StoryModal';
+
+
 class StoryList extends Component {
     constructor(props) { 
         super(props);
+        
         this.state = {
             stories: props.stories,
             modalContentIndex: -1,
@@ -20,7 +23,7 @@ class StoryList extends Component {
     }
 
     expandStory = (index) => {
-        this.setState({ modalContentIndex: 0, showModal: true })
+        this.setState({ modalContentIndex: index, showModal: true })
     }
 
     collapseStory = () => {
@@ -48,7 +51,7 @@ class StoryList extends Component {
                 ? <StoryModal
                     collapseStory={this.collapseStory}
                     showModal={this.state.showModal}
-                    story={this.state.stories[this.state.modalContentIndex]}
+                    story={this.props.stories[this.state.modalContentIndex]}
                 ></StoryModal>
                 : null
             }

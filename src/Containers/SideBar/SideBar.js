@@ -4,7 +4,7 @@ import './SideBar.css';
 
 import PopularTags from '../PopularTags/PopularTags'
 import WriteStoryCard from '../../Components/WriteStoryCard/WriteStoryCard';
-
+import {withRouter} from 'react-router-dom'
 
 class SideBar extends Component {
     constructor(props) {
@@ -42,11 +42,18 @@ class SideBar extends Component {
 
             ]
         }
+        this.toWriteStoryPage = this.toWriteStoryPage.bind(this)
+    }
+
+    toWriteStoryPage = () => {
+        this.props.history.push('/newstory')
     }
 
     render() {
         return <div className='sidebar'>
-            <WriteStoryCard></WriteStoryCard>
+            <WriteStoryCard
+                toWriteStoryPage={this.toWriteStoryPage}
+            />
             <PopularTags
                 tags={this.state.tags}
             ></PopularTags>
@@ -54,4 +61,4 @@ class SideBar extends Component {
     }
 }
 
-export default SideBar;
+export default withRouter(SideBar);

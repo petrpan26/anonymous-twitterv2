@@ -13,7 +13,9 @@ function App() {
       <Switch>
         <Route path='/home' component={HomePage}/>
         <Route path='/newstory' component={NewStoryPage}/>
-        <Route path='/stories' component={StoriesPage}/>
+        <Route path='/stories' render={
+          (props) => (<StoriesPage key={props.location.search} {...props}></StoriesPage>)
+        }/>
         <Route path='/'>
           <Redirect to='/home'/>
         </Route>
