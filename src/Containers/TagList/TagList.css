@@ -1,0 +1,11 @@
+.tag-item{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tag-item:hover{
+    background-color: RGB(255, 236, 184);
+}

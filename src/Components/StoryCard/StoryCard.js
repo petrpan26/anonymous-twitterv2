@@ -6,7 +6,7 @@ const StoryCard = (props) => {
     return <div className='story-card shadow'>
         <div className='story-card-header'>
             <h3>#{props.story.tag}</h3>
-            <Button variant="info">{'like'}</Button>
+            <Button variant="info" className='like-button'>up</Button>
         </div>
         <hr></hr>
         <p className='story-card-content'>{props.story.content}</p>
