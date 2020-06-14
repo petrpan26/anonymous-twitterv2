@@ -1,12 +1,12 @@
 import React from 'react';
-import './StoryCard.css'
-
+import './StoryCard.css';
+import {Button} from 'react-bootstrap';
 
 const StoryCard = (props) => {
     return <div className='story-card shadow'>
         <div className='story-card-header'>
             <h3>#{props.story.tag}</h3>
-            <p>{props.story.created_at}</p>
+            <Button variant="info">{'like'}</Button>
         </div>
         <hr></hr>
         <p className='story-card-content'>{props.story.content}</p>
