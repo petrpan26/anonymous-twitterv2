@@ -1,0 +1,31 @@
+resources:
+  - type: storage.v1.bucket
+    name: sls-confession-dev-1592029235661
+  - type: 'gcp-types/cloudfunctions-v1:projects.locations.functions'
+    name: confession-dev-create
+    properties:
+      parent: projects/confesison-280206/locations/us-central1
+      availableMemoryMb: 256
+      runtime: nodejs8
+      timeout: 60s
+      entryPoint: create
+      function: confession-dev-create
+      sourceArchiveUrl: >-
+        gs://sls-confession-dev-1592029235661/serverless/confession/dev/1592102062288-2020-06-14T02:34:22.288Z/confession.zip
+      labels: {}
+      httpsTrigger:
+        url: create
+  - type: 'gcp-types/cloudfunctions-v1:projects.locations.functions'
+    name: confession-dev-test
+    properties:
+      parent: projects/confesison-280206/locations/us-central1
+      availableMemoryMb: 256
+      runtime: nodejs8
+      timeout: 60s
+      entryPoint: test
+      function: confession-dev-test
+      sourceArchiveUrl: >-
+        gs://sls-confession-dev-1592029235661/serverless/confession/dev/1592102062288-2020-06-14T02:34:22.288Z/confession.zip
+      labels: {}
+      httpsTrigger:
+        url: test

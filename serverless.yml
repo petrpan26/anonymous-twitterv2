@@ -28,10 +28,16 @@ functions:
     handler: create
     events:
       - http: create
+  fetch:
+    handler: fetch
+    events:
+      - http: fetch
   test:
     handler: test
     events:
       - http: test
+
+ 
   # NOTE: the following uses an "event" event (pubSub event in this case).
   # Please create the corresponding resources in the Google Cloud
   # before deploying this service through Serverless
