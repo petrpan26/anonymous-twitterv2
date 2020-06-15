@@ -9,7 +9,7 @@ const StoryModal = (props) => {
         onHide={props.collapseStory}
     >
         <Modal.Header closeButton>
-            <Modal.Title>#{props.story.tag}</Modal.Title>
+            <Modal.Title>{props.story.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <p className='story-card-content'>{props.story.content}</p>
