@@ -6,3 +6,16 @@
 .page-content{
     margin-top: 20px;
 }
+
+.tag-input{
+    background: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+    width: 50%;
+    text-align: center;
+    transition: 1s;
+    padding-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}

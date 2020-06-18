@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import StoryList from '../../Containers/StoryList/StoryList';
 import SideBar from '../../Containers/SideBar/SideBar';
 import $ from 'jquery';
 import queryString from 'query-string';
-
+import {withRouter} from 'react-router-dom';
 import './StoriesPage.css';
 
 class StoriesPage extends Component {
@@ -15,17 +15,20 @@ class StoriesPage extends Component {
         this.state = {
             tag: queryString.parse(props.location.search).tag,
             stories: [],
-            cursor: null
+            cursor: null,
+            changed: false
         }
         this.fetchStories = this.fetchStories.bind(this)
         this.resetScrollPosition = this.resetScrollPosition.bind(this);
         this.fetchStoriesWhenScrollToBottom = this.fetchStoriesWhenScrollToBottom.bind(this)
+        this.onChangeTag = this.onChangeTag.bind(this)
     }
-    
-    componentDidMount(){
+
+    componentDidMount() {
         this.fetchStories();
         this.resetScrollPosition();
         this.fetchStoriesWhenScrollToBottom();
+        this.setState({ changed: false })
     }
 
 
@@ -34,7 +37,7 @@ class StoriesPage extends Component {
     //     this.fetchStories()
     // }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         const container = $(window);
         container.off();
     }
@@ -44,15 +47,23 @@ class StoriesPage extends Component {
         container.scrollTop(0);
     }
 
-    fetchStoriesWhenScrollToBottom = () =>{
+    fetchStoriesWhenScrollToBottom = () => {
         const container = $(window)
         container.on('scroll', () => {
-            if(container.scrollTop() + container.height() >= 0.98* $(document).height()){
+            if (container.scrollTop() + container.height() >= 0.98 * $(document).height()) {
                 this.fetchStories()
             }
         })
     }
 
+    onChangeTag = (event) => {
+        this.setState({ tag: event.target.value, changed: true })
+    }
+
+    submitTag = (event) => {
+        event.preventDefault()
+        this.props.history.push({pathname: '/stories', search: queryString.stringify({tag: this.state.tag})});
+    }
 
     fetchStories = () => {
 
@@ -138,21 +149,26 @@ class StoriesPage extends Component {
 
     render() {
 
-        return  <Container className='page-content'>
-                <h1>#{this.state.tag}</h1>
-                <hr className='title-divider'></hr>
-                <Row>
-                    <Col xs md={4}>
-                        <SideBar></SideBar>
-                    </Col>
-                    <Col xs md={8}>
-                        <StoryList
+        return <Container className='page-content'>
+            {/* <h1>#{this.state.tag}</h1>
+                <hr className='title-divider'></hr> */}
+            <form onSubmit={this.submitTag}>
+                <input type='text' className='tag-input' value={this.state.tag} onChange={this.onChangeTag}></input>
+                {/* {this.state.changed?<Button type="submit">Find</Button>:null} */}
+            </form>
+
+            <Row>
+                <Col xs md={4}>
+                    <SideBar></SideBar>
+                </Col>
+                <Col xs md={8}>
+                    <StoryList
                         stories={this.state.stories}
-                        />
-                    </Col>
-                </Row>
-            </Container>
+                    />
+                </Col>
+            </Row>
+        </Container>
     }
 }
 
-export default StoriesPage;
+export default withRouter(StoriesPage);

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './SideBar.css';
 
 import PopularTags from '../PopularTags/PopularTags'
-import WriteStoryCard from '../../Components/WriteStoryCard/WriteStoryCard';
+import WriteStoryCard from '../../Containers/WriteStoryCard/WriteStoryCard';
 import {withRouter} from 'react-router-dom'
 
 class SideBar extends Component {
@@ -42,12 +42,12 @@ class SideBar extends Component {
 
             ]
         }
-        this.toWriteStoryPage = this.toWriteStoryPage.bind(this)
+        
     }
 
-    toWriteStoryPage = () => {
-        this.props.history.push('/home')
-    }
+
+
+    
 
     render() {
         return <div className='sidebar'>
