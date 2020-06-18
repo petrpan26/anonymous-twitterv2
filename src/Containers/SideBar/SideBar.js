@@ -46,7 +46,7 @@ class SideBar extends Component {
     }
 
     toWriteStoryPage = () => {
-        this.props.history.push('/newstory')
+        this.props.history.push('/home')
     }
 
     render() {
