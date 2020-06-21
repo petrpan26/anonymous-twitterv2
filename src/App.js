@@ -12,7 +12,6 @@ function App() {
     <div className="App">
       <Switch>
         <Route path='/home' component={HomePage}/>
-        <Route path='/newstory' component={NewStoryPage}/>
         <Route path='/stories' render={
           (props) => (<StoriesPage key={props.location.search} {...props}></StoriesPage>)
         }/>
