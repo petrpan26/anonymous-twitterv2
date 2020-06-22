@@ -31,11 +31,10 @@ class StoriesPage extends Component {
         this.setState({ changed: false })
     }
 
-
-    // componentWillReceiveProps(props) {
-    //     console.log('props')
-    //     this.fetchStories()
-    // }
+  // componentWillReceiveProps(props) {
+  //     console.log('props')
+  //     this.fetchStories()
+  // }
 
     componentWillUnmount() {
         const container = $(window);
@@ -142,10 +141,10 @@ class StoriesPage extends Component {
             ]
         }
         this.setState({
-            stories: this.state.stories.concat(response.stories),
-            cursor: response.stories.length !== 0 ? response.stories[response.stories.length - 1].id : null
-        })
-    }
+          stories: this.state.stories.concat(response.stories),
+          cursor: response.cursor,
+        });
+  }
 
     render() {
 
