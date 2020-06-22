@@ -28,16 +28,16 @@ class SideBar extends Component {
                     num_post: 6000,
                 },
                 {
-                    name: 'imgaybutilikegirls',
+                    name: 'abuse',
                     num_post: 5000,
                 },
                 {
-                    name: 'ilikemysister',
-                    num_post: 4000,
+                    name: 'darkthoughts',
+                    num_post: 4200,
                 },
                 {
                     name: 'feminism',
-                    num_post: 3000,
+                    num_post: 3020,
                 },
 
             ]
